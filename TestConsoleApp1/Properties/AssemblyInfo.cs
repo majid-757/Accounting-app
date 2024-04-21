@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Accounting.DataLayer")]
+[assembly: AssemblyTitle("TestConsoleApp1")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Accounting.DataLayer")]
+[assembly: AssemblyProduct("TestConsoleApp1")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("512790d1-9fc6-465b-8539-52ba942e0e1a")]
+[assembly: Guid("8248a768-bcd6-4022-8019-1a6e36116ced")]
 
 // Version information for an assembly consists of the following four values:
 //
