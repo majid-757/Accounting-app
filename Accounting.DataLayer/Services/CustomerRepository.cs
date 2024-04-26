@@ -53,6 +53,11 @@ namespace Accounting.DataLayer.Services
             return db.Customers.Find(customerId);
         }
 
+        public IEnumerable<Customers> GetCustomersByFilter(string parameter)
+        {
+            return db.Customers.Where(c => c.FullName.Contains(parameter) || c.Email.Contains(parameter) || c.Mobile.Contains(parameter)).ToList();
+        }
+
         public bool InsertCustomer(Customers customer)
         {
             try
@@ -66,22 +71,20 @@ namespace Accounting.DataLayer.Services
             }
         }
 
-        public void Save()
-        {
-            db.SaveChanges();
-        }
 
         public bool UpdateCustomer(Customers customer)
         {
-            try
+
+            var local = db.Set<Customers>()
+                         .Local
+                         .FirstOrDefault(f => f.CustomerID == customer.CustomerID);
+            if (local != null)
             {
-                db.Entry(customer).State = EntityState.Modified;
-                return true;
+                db.Entry(local).State = EntityState.Detached;
             }
-            catch
-            {
-                return false;
-            }
+
+            db.Entry(customer).State = EntityState.Modified;
+            return true;
         }
     }
 }
