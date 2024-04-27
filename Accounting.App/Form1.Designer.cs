@@ -31,7 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.btnCustomers = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.btnNewAccounting = new System.Windows.Forms.ToolStripButton();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -50,24 +51,36 @@
             // toolStrip2
             // 
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnCustomers});
+            this.toolStripButton1,
+            this.btnNewAccounting});
             this.toolStrip2.Location = new System.Drawing.Point(0, 28);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(784, 68);
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             // 
-            // btnCustomers
+            // toolStripButton1
             // 
-            this.btnCustomers.Font = new System.Drawing.Font("Vazirmatn", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomers.Image = global::Accounting.App.Properties.Resources._1371476468_preferences_contact_list;
-            this.btnCustomers.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnCustomers.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Size = new System.Drawing.Size(70, 65);
-            this.btnCustomers.Text = "طرف حساب";
-            this.btnCustomers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
+            this.toolStripButton1.Font = new System.Drawing.Font("Vazirmatn", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton1.Image = global::Accounting.App.Properties.Resources._1371476468_preferences_contact_list;
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(70, 65);
+            this.toolStripButton1.Text = "طرف حساب";
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // btnNewAccounting
+            // 
+            this.btnNewAccounting.Font = new System.Drawing.Font("Vazirmatn", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewAccounting.Image = global::Accounting.App.Properties.Resources._1370791030_credit_card;
+            this.btnNewAccounting.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnNewAccounting.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNewAccounting.Name = "btnNewAccounting";
+            this.btnNewAccounting.Size = new System.Drawing.Size(76, 65);
+            this.btnNewAccounting.Text = "تراکنش جدید";
+            this.btnNewAccounting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNewAccounting.Click += new System.EventHandler(this.btnNewAccounting_Click);
             // 
             // toolStripDropDownButton1
             // 
@@ -107,7 +120,8 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripButton btnCustomers;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton btnNewAccounting;
     }
 }
 

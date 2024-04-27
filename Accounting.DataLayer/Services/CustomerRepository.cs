@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Accounting.DataLayer.Repositories;
+using Accounting.ViewModels.Customers;
 
 namespace Accounting.DataLayer.Services
 {
@@ -53,9 +54,32 @@ namespace Accounting.DataLayer.Services
             return db.Customers.Find(customerId);
         }
 
+        public int GetCustomerIdByName(string name)
+        {
+            return db.Customers.First(c => c.FullName == name).CustomerID;
+        }
+
         public IEnumerable<Customers> GetCustomersByFilter(string parameter)
         {
             return db.Customers.Where(c => c.FullName.Contains(parameter) || c.Email.Contains(parameter) || c.Mobile.Contains(parameter)).ToList();
+        }
+
+        public List<ListCustomerViewModel> GetNameCustomers(string filter = "")
+        {
+            if (filter == "")
+            {
+                return db.Customers.Select(c => new ListCustomerViewModel()
+                {
+                    CustomerID = c.CustomerID,
+                    FullName = c.FullName
+                }).ToList();
+            }
+
+            return db.Customers.Where(c => c.FullName.Contains(filter)).Select(c => new ListCustomerViewModel()
+            {
+                CustomerID = c.CustomerID,
+                FullName = c.FullName
+            }).ToList();
         }
 
         public bool InsertCustomer(Customers customer)
