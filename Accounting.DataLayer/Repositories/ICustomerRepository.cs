@@ -18,5 +18,6 @@ namespace Accounting.DataLayer.Repositories
         bool DeleteCustomer(Customers customer);
         bool DeleteCustomer(int customerId);
         int GetCustomerIdByName(string name);
+        string GetCustomerNameById(int customerId);
     }
 }

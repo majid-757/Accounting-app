@@ -59,6 +59,11 @@ namespace Accounting.DataLayer.Services
             return db.Customers.First(c => c.FullName == name).CustomerID;
         }
 
+        public string GetCustomerNameById(int customerId)
+        {
+            return db.Customers.Find(customerId).FullName;
+        }
+
         public IEnumerable<Customers> GetCustomersByFilter(string parameter)
         {
             return db.Customers.Where(c => c.FullName.Contains(parameter) || c.Email.Contains(parameter) || c.Mobile.Contains(parameter)).ToList();
