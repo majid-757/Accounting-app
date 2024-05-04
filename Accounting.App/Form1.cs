@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Accounting.Utility.Convertor;
 
 namespace Accounting.App
 {
@@ -41,6 +42,34 @@ namespace Accounting.App
             frmReport frmReport = new frmReport();
             frmReport.TypeID = 1;
             frmReport.ShowDialog();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin frmLogin = new frmLogin();
+            if (frmLogin.ShowDialog()==DialogResult.OK)
+            {
+                this.Show();
+                lblDate.Text = DateTime.Now.ToShamsi();
+                lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
+            }
+            else
+            {
+                Application.Exit();
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void btnEditLogin_Click(object sender, EventArgs e)
+        {
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.isEdit = true;
+            frmLogin.ShowDialog();
         }
     }
 }
