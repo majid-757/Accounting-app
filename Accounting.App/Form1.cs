@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Accounting.Business;
 using Accounting.Utility.Convertor;
+using Accounting.ViewModels.Accounting;
 
 namespace Accounting.App
 {
@@ -53,11 +55,22 @@ namespace Accounting.App
                 this.Show();
                 lblDate.Text = DateTime.Now.ToShamsi();
                 lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
+
+                Report();
+
             }
             else
             {
                 Application.Exit();
             }
+        }
+
+        void Report()
+        {
+            ReportViewModel report = Account.ReportFormMain();
+            lblPay.Text = report.Pey.ToString("#,0");
+            lblRecive.Text = report.Recive.ToString("#,0");
+            lblAccountBalance.Text = report.AccountBalance.ToString("#,0");
         }
 
         private void timer1_Tick(object sender, EventArgs e)
